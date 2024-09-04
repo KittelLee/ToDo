@@ -1,4 +1,4 @@
-import useCurrentDate from '../hooks/useCurrentDate';
+import useCurrentDate from "../hooks/useCurrentDate";
 import "../styles/Clock.css";
 
 const MONTH_BASE = 1;
@@ -13,7 +13,6 @@ const WEEK_DAYS = [
   "금요일",
   "토요일",
 ];
-
 
 function Clock() {
   const date = useCurrentDate();
