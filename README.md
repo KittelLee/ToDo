@@ -1,30 +1,23 @@
-# React + TypeScript + Vite
+# 할일 (ToDo) 앱
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<details>
+  <summary>프론트엔드 개발자 과제 요약</summary>
+    <ul>
+      <li><b>React.JS v18 및 And-Design v4 이상 을 사용하여 다음 두가지중 1개 이상 개발 후 제출</b></li>
+      <li>1. 할일 (ToDo) 앱</li>
+      <li>2. 일정 (Calendar) 앱</li>
+      <li>과제 제출 방법 : github에 repo생성한 후 github 주소 제출</li>
+      <li>README.md 파일에 다음 내용 기입 필수</li>
+      <li>1. 자신이 개발한 앱에 대한 설명</li>
+      <li>2. 소스 빌드 및 실행 방법 메뉴얼</li>
+      <li>3. 주력으로 사용한 컴포넌트에대한 설명 및 사용 이유 기입</li>
+      <li>* 완벽할 필요 없고, 기한내에 동작 가능한 부분까지 제출</li>
+      <li>* 제출한 과제가 동작해야함</li>
+    </ul>
+</details>
 
-Currently, two official plugins are available:
+1. 자신이 개발한 앱에 대한 설명
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2. 소스 빌드 및 실행 방법 메뉴얼
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+3. 주력으로 사용한 컴포넌트에 대한 설명 및 사용 이유 기입
