@@ -1,0 +1,103 @@
+.sub-list {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  width: 94%;
+  height: 10%;
+  border: none;
+  border-radius: 10px;
+  padding: 2px;
+  margin: 2px 0;
+}
+
+.check {
+  cursor: pointer;
+  position: relative;
+  margin: auto;
+  width: 18px;
+  height: 18px;
+  -webkit-tap-highlight-color: transparent;
+  transform: translate3d(0, 0, 0);
+}
+
+.check:before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(34, 50, 84, 0.03);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.check svg {
+  position: relative;
+  z-index: 1;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: black;
+  stroke-width: 1.5;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.2s ease;
+  width: 18px;
+  height: 18px;
+}
+
+.check svg path {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 0;
+}
+
+.check svg polyline {
+  stroke-dasharray: 22;
+  stroke-dashoffset: 66;
+}
+
+.check:hover:before {
+  opacity: 1;
+}
+
+.check:hover svg {
+  stroke: var(--accent-color, lime);
+}
+
+#cbx {
+  display: none;
+}
+
+#cbx:checked + .check svg {
+  stroke: var(--accent-color, lime);
+}
+
+#cbx:checked + .check svg path {
+  stroke-dashoffset: 60;
+  transition: all 0.3s linear;
+}
+
+#cbx:checked + .check svg polyline {
+  stroke-dashoffset: 42;
+  transition: all 0.2s linear;
+  transition-delay: 0.15s;
+}
+
+.sub-list label {
+  margin-left: 4px;
+  margin-right: 8px;
+}
+
+.sub-list p,
+.sub-list del {
+  margin: 0;
+  flex-grow: 1;
+}
+
+.sub-list img {
+  width: 20px;
+  height: 20px;
+  margin: 0 4px;
+  cursor: pointer;
+}
