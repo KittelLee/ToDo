@@ -1,9 +1,16 @@
 .list-wrap {
-  background-color: lightsalmon; /*임시*/
   width: 80%;
-  height: 280px;
+  height: 300px;
+}
+
+.subList-container {
+  background-color: lightsalmon; /* fix */
+  width: 100%;
+  height: 300px;
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 10px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4px 0;
 }

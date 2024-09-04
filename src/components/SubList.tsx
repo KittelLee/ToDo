@@ -3,7 +3,11 @@ import trash from "../assets/icons/trash.svg";
 import modify from "../assets/icons/modify.svg";
 import "../styles/SubList.css";
 
-function SubList() {
+interface SubListProps {
+  text: string;
+}
+
+function SubList({ text }: SubListProps) {
   const [isChecked, setIsChecked] = useState(false);
 
   const handleCheckboxChange = () => {
@@ -24,7 +28,7 @@ function SubList() {
           <polyline points="1 9 7 14 15 4" />
         </svg>
       </label>
-      {isChecked ? <del>블로그 올리기</del> : <p>블로그 올리기</p>}
+      {isChecked ? <del>{text}</del> : <p>{text}</p>}
       <img src={modify} alt="수정아이콘" />
       <img src={trash} alt="삭제아이콘" />
     </div>
