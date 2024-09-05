@@ -6,9 +6,15 @@ interface SubListProps {
   text: string;
   isChecked: boolean;
   onCheckboxChange: () => void;
+  onDelete: () => void;
 }
 
-function SubList({ text, isChecked, onCheckboxChange }: SubListProps) {
+function SubList({
+  text,
+  isChecked,
+  onCheckboxChange,
+  onDelete,
+}: SubListProps) {
   return (
     <div className="sub-list">
       <input
@@ -26,7 +32,7 @@ function SubList({ text, isChecked, onCheckboxChange }: SubListProps) {
       </label>
       {isChecked ? <del>{text}</del> : <p>{text}</p>}
       <img src={modify} alt="수정아이콘" />
-      <img src={trash} alt="삭제아이콘" />
+      <img src={trash} alt="삭제아이콘" onClick={onDelete} />
     </div>
   );
 }

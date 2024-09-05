@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import SubList from "../components/SubList";
 import TodoAdd from "../components/TodoAdd";
 import "../styles/TodoList.css";
@@ -10,6 +10,7 @@ interface Todo {
 
 function TodoList() {
   const [todos, setTodos] = useState<Todo[]>([]);
+  const isInitialMount = useRef(true);
 
   useEffect(() => {
     const storedTodos = localStorage.getItem("todos");
@@ -31,7 +32,9 @@ function TodoList() {
   }, []);
 
   useEffect(() => {
-    if (todos.length > 0) {
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+    } else {
       try {
         const todosString = JSON.stringify(todos);
         localStorage.setItem("todos", todosString);
@@ -57,6 +60,13 @@ function TodoList() {
     );
   };
 
+  const handleDelete = (index: number) => {
+    setTodos((prevTodos) => {
+      const updatedTodos = prevTodos.filter((_, i) => i !== index);
+      return updatedTodos;
+    });
+  };
+
   return (
     <div className="list-wrap">
       <TodoAdd onAddTodo={handleAddTodo} />
@@ -67,6 +77,7 @@ function TodoList() {
             text={todo.text}
             isChecked={todo.isChecked}
             onCheckboxChange={() => handleCheckboxChange(index)}
+            onDelete={() => handleDelete(index)}
           />
         ))}
       </div>
