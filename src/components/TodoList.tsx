@@ -31,12 +31,14 @@ function TodoList() {
   }, []);
 
   useEffect(() => {
-    try {
-      const todosString = JSON.stringify(todos);
-      localStorage.setItem("todos", todosString);
-      console.log("Saved todos to localStorage:", todosString);
-    } catch (error) {
-      console.error("Failed to save todos to localStorage", error);
+    if (todos.length > 0) {
+      try {
+        const todosString = JSON.stringify(todos);
+        localStorage.setItem("todos", todosString);
+        console.log("할 일 목록을 로컬 스토리지에 저장했습니다:", todosString);
+      } catch (error) {
+        console.error("로컬 스토리지 저장 실패:", error);
+      }
     }
   }, [todos]);
 
