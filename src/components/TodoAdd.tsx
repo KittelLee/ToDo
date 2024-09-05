@@ -19,6 +19,12 @@ function TodoAdd({ onAddTodo }: TodoAddProps) {
     }
   };
 
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      handleSubmit();
+    }
+  };
+
   return (
     <div className="register-wrap">
       <div className="register-inner">
@@ -27,6 +33,7 @@ function TodoAdd({ onAddTodo }: TodoAddProps) {
           placeholder="할일을 입력하세요"
           value={inputValue}
           onChange={handleChange}
+          onKeyUp={handleKeyPress}
         />
         <button onClick={handleSubmit}>등록하기</button>
       </div>
