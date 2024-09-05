@@ -1,28 +1,25 @@
-import { useState } from "react";
 import trash from "../assets/icons/trash.svg";
 import modify from "../assets/icons/modify.svg";
 import "../styles/SubList.css";
 
 interface SubListProps {
   text: string;
+  isChecked: boolean;
+  onCheckboxChange: () => void;
 }
 
-function SubList({ text }: SubListProps) {
-  const [isChecked, setIsChecked] = useState(false);
-
-  const handleCheckboxChange = () => {
-    setIsChecked((prev) => !prev);
-  };
-
+function SubList({ text, isChecked, onCheckboxChange }: SubListProps) {
+  const uniqueId = `cbx-${Math.random().toString(36).substr(2, 9)}`;
   return (
     <div className="sub-list">
       <input
         type="checkbox"
-        id="cbx"
+        id={uniqueId}
         checked={isChecked}
-        onChange={handleCheckboxChange}
+        onChange={onCheckboxChange}
+        style={{ display: "none" }}
       />
-      <label htmlFor="cbx" className="check">
+      <label htmlFor={uniqueId} className="check">
         <svg viewBox="0 0 18 18">
           <path d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z" />
           <polyline points="1 9 7 14 15 4" />

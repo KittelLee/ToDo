@@ -65,20 +65,16 @@
   stroke: var(--accent-color, lime);
 }
 
-#cbx {
-  display: none;
-}
-
-#cbx:checked + .check svg {
+input[type="checkbox"]:checked + .check svg {
   stroke: var(--accent-color, lime);
 }
 
-#cbx:checked + .check svg path {
+input[type="checkbox"]:checked + .check svg path {
   stroke-dashoffset: 60;
   transition: all 0.3s linear;
 }
 
-#cbx:checked + .check svg polyline {
+input[type="checkbox"]:checked + .check svg polyline {
   stroke-dashoffset: 42;
   transition: all 0.2s linear;
   transition-delay: 0.15s;
