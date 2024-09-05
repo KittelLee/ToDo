@@ -35,7 +35,9 @@ function TodoAdd({ onAddTodo }: TodoAddProps) {
           onChange={handleChange}
           onKeyUp={handleKeyPress}
         />
-        <button onClick={handleSubmit}>등록하기</button>
+        <button onClick={handleSubmit} disabled={!inputValue.trim()}>
+          등록하기
+        </button>
       </div>
     </div>
   );

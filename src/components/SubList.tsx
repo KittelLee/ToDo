@@ -9,17 +9,16 @@ interface SubListProps {
 }
 
 function SubList({ text, isChecked, onCheckboxChange }: SubListProps) {
-  const uniqueId = `cbx-${Math.random().toString(36).substr(2, 9)}`;
   return (
     <div className="sub-list">
       <input
         type="checkbox"
-        id={uniqueId}
+        id={`cbx-${text}`}
         checked={isChecked}
         onChange={onCheckboxChange}
         style={{ display: "none" }}
       />
-      <label htmlFor={uniqueId} className="check">
+      <label htmlFor={`cbx-${text}`} className="check">
         <svg viewBox="0 0 18 18">
           <path d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z" />
           <polyline points="1 9 7 14 15 4" />
