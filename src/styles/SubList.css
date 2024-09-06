@@ -1,3 +1,11 @@
+:root {
+  --red-color: invert(26%) sepia(89%) saturate(5944%) hue-rotate(346deg)
+    brightness(96%) contrast(102%);
+
+  --blue-color: invert(35%) sepia(84%) saturate(3444%) hue-rotate(192deg)
+    brightness(95%) contrast(87%);
+}
+
 .sub-list {
   display: flex;
   align-items: center;
@@ -96,4 +104,12 @@ input[type="checkbox"]:checked + .check svg polyline {
   height: 20px;
   margin: 0 4px;
   cursor: pointer;
+}
+
+#modify-icon:hover {
+  filter: var(--blue-color);
+}
+
+#delete-icon:hover {
+  filter: var(--red-color);
 }

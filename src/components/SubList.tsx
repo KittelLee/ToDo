@@ -31,8 +31,8 @@ function SubList({
         </svg>
       </label>
       {isChecked ? <del>{text}</del> : <p>{text}</p>}
-      <img src={modify} alt="수정아이콘" />
-      <img src={trash} alt="삭제아이콘" onClick={onDelete} />
+      <img id="modify-icon" src={modify} alt="수정아이콘" />
+      <img id="delete-icon" src={trash} alt="삭제아이콘" onClick={onDelete} />
     </div>
   );
 }
