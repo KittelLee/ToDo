@@ -60,6 +60,14 @@ function TodoList() {
     );
   };
 
+  const handleEdit = (index: number, newText: string) => {
+    setTodos((prevTodos) =>
+      prevTodos.map((todo, i) =>
+        i === index ? { ...todo, text: newText } : todo
+      )
+    );
+  };
+
   const handleDelete = (index: number) => {
     setTodos((prevTodos) => {
       const updatedTodos = prevTodos.filter((_, i) => i !== index);
@@ -77,6 +85,7 @@ function TodoList() {
             text={todo.text}
             isChecked={todo.isChecked}
             onCheckboxChange={() => handleCheckboxChange(index)}
+            onEdit={(newText) => handleEdit(index, newText)}
             onDelete={() => handleDelete(index)}
           />
         ))}
