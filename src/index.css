@@ -6,4 +6,7 @@
 body {
   max-width: 600px;
   background-color: lightgray;
+  background-image: url(../src/assets/images/landscape.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }

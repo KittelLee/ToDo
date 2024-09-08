@@ -1,9 +1,5 @@
-:root {
-  --customLightGray-color: rgb(235, 235, 235);
-}
-
 .register-wrap {
-  background-color: var(--customLightGray-color);
+  background-color: gainsboro;
   width: 100%;
   height: 100px;
   display: flex;
@@ -38,7 +34,7 @@ button {
 
 .register-inner button {
   width: 20%;
-  background-color: lightcoral;
+  background-color: chocolate;
   color: white;
 }
 

@@ -1,10 +1,6 @@
-:root {
-  --customLightGray-color: rgb(235, 235, 235);
-}
-
 .clock-wrap {
   margin-top: 40px;
-  background-color: var(--customLightGray-color);
+  background-color: gainsboro;
   width: 80%;
   height: 100px;
   display: flex;
