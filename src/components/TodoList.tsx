@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import SubList from "../components/SubList";
 import TodoAdd from "../components/TodoAdd";
 import "../styles/TodoList.css";
@@ -45,35 +45,35 @@ function TodoList() {
     }
   }, [todos]);
 
-  const handleAddTodo = (todoText: string) => {
+  const handleAddTodo = useCallback((todoText: string) => {
     setTodos((prevTodos) => [
       ...prevTodos,
       { text: todoText, isChecked: false },
     ]);
-  };
+  }, []);
 
-  const handleCheckboxChange = (index: number) => {
+  const handleCheckboxChange = useCallback((index: number) => {
     setTodos((prevTodos) =>
       prevTodos.map((todo, i) =>
         i === index ? { ...todo, isChecked: !todo.isChecked } : todo
       )
     );
-  };
+  }, []);
 
-  const handleEdit = (index: number, newText: string) => {
+  const handleEdit = useCallback((index: number, newText: string) => {
     setTodos((prevTodos) =>
       prevTodos.map((todo, i) =>
         i === index ? { ...todo, text: newText } : todo
       )
     );
-  };
+  }, []);
 
-  const handleDelete = (index: number) => {
+  const handleDelete = useCallback((index: number) => {
     setTodos((prevTodos) => {
       const updatedTodos = prevTodos.filter((_, i) => i !== index);
       return updatedTodos;
     });
-  };
+  }, []);
 
   return (
     <div className="list-wrap">
