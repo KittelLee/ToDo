@@ -44,6 +44,14 @@ function SubList({
     }
   };
 
+  const handleModifyClick = () => {
+    if (!isChecked) {
+      setIsEditing(true);
+    } else {
+      alert("체크된 항목은 수정이 어렵습니다.");
+    }
+  };
+
   return (
     <div className="sub-list">
       <input
@@ -75,13 +83,7 @@ function SubList({
             id="modify-icon"
             src={modify}
             alt="수정아이콘"
-            onClick={() => {
-              if (!isChecked) {
-                setIsEditing(true);
-              } else {
-                alert("체크된 항목은 수정이 어렵습니다.");
-              }
-            }}
+            onClick={handleModifyClick}
           />
           <img
             id="delete-icon"
