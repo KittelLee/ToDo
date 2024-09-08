@@ -59,7 +59,7 @@ function SubList({
         id={`cbx-${text}`}
         checked={isChecked}
         onChange={onCheckboxChange}
-        style={{ display: "none" }}
+        className="hidden-checkbox"
       />
       <label htmlFor={`cbx-${text}`} className="check">
         <svg viewBox="0 0 18 18">

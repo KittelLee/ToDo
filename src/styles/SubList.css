@@ -18,6 +18,10 @@
   margin: 2px 0;
 }
 
+.hidden-checkbox {
+  display: none;
+}
+
 .check {
   cursor: pointer;
   position: relative;
