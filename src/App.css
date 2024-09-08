@@ -1,5 +1,7 @@
 .todo-wrap {
+  margin-top: 20px;
   background-color: whitesmoke;
-  height: 660px;
-  padding: 10px;
+  height: 600px;
+  padding: 1px;
+  border-radius: 20px;
 }
