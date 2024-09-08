@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import trash from "../assets/icons/trash.svg";
 import modify from "../assets/icons/modify.svg";
 import "../styles/SubList.css";
@@ -20,6 +20,12 @@ function SubList({
 }: SubListProps) {
   const [isEditing, setIsEditing] = useState(false);
   const [inputValue, setInputValue] = useState(text);
+
+  useEffect(() => {
+    if (isEditing) {
+      setInputValue(text);
+    }
+  }, [isEditing, text]);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
