@@ -35,11 +35,12 @@ button {
 .register-inner button {
   width: 20%;
   background-color: chocolate;
+  opacity: 0.8;
   color: white;
 }
 
 .register-inner button:hover {
-  background-color: tomato;
+  opacity: 1;
   color: white;
   cursor: pointer;
 }
