@@ -19,15 +19,16 @@ function TodoList() {
         const parsedTodos = JSON.parse(storedTodos);
         if (Array.isArray(parsedTodos)) {
           setTodos(parsedTodos);
-          console.log("Loaded todos from localStorage:", parsedTodos);
+          console.log("로컬 스토리지에서 로드된 작업관리:", parsedTodos);
         } else {
-          console.warn("Invalid data format in localStorage");
+          console.warn("로컬스토리지의 데이터 형식이 잘못되었습니다.");
         }
       } catch (error) {
-        console.error("Failed to parse todos from localStorage", error);
+        console.error("로컬스토리지의 작업을 분석하지 못했습니다.", error);
+        alert("할 일 목록을 로드하는 데 실패했습니다.");
       }
     } else {
-      console.log("No todos found in localStorage");
+      console.log("로컬 스토리지에서 할 일을 찾을 수 없습니다.");
     }
   }, []);
 
@@ -41,6 +42,7 @@ function TodoList() {
         console.log("할 일 목록을 로컬 스토리지에 저장했습니다:", todosString);
       } catch (error) {
         console.error("로컬 스토리지 저장 실패:", error);
+        alert("할 일 목록을 저장하는 데 실패했습니다.");
       }
     }
   }, [todos]);
