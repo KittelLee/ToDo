@@ -93,6 +93,12 @@ input[type="checkbox"]:checked + .check svg polyline {
   margin-right: 8px;
 }
 
+.sub-list input:last-child {
+  width: 90%;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
 .sub-list p,
 .sub-list del {
   margin: 0;
